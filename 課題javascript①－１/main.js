@@ -12,10 +12,19 @@
 // }
 
 //課題①-2
-let shutoken = prompt("日本の首都は？");
-if (shutoken == "東京") {
-  alert("正解です！");
-} else {
-  alert("不正解です！");
-}
+// let shutoken = prompt("日本の首都は？");
+// if (shutoken == "東京") {
+//   alert("正解です！");
+// } else {
+//   alert("不正解です！");
+// }
+
+//課題①-3
+let input = prompt("「確認、追加、削除、終了」の4つのいずれかを入力してください");
+
+console.log("3 : " + input)
+
+console.log("0 : 掃除");
+console.log("1 : 買い物");
+console.log("2 : 散歩");
 
