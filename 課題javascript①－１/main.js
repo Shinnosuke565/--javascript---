@@ -20,15 +20,19 @@
 // }
 
 //課題①-3
-let input = prompt("「確認、追加、削除、終了」の4つのいずれかを入力してください");
-var array = ["0 : 掃除", "1 : 買い物", "2 : 散歩"];
+let result = prompt("「確認、追加、削除、終了」の4つのいずれかを入力してください");
+console.log(result);
 
-for(var i = 0; i < 4; i++) {
+
+const array = [0, 1, 2];
+
+for(var i = 0; i < 3; i++) {
   console.log(array[i]);
 }
 
-console.log("0 : 掃除");
-console.log("1 : 買い物");
-console.log("2 : 散歩");
-console.log("3 : " + input);
+
+const tasks = ['掃除', '買い物', '散歩'];
+tasks.forEach((tasks, index) => console.log(index, tasks));
+
+
 
