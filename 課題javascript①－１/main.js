@@ -30,5 +30,5 @@ for(let i = 0; i < 2; i++) {
 }
 tasks.push = (result);
  
-console.log({result});
+console.log(tasks);
 
