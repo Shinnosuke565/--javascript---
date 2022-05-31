@@ -1,3 +1,4 @@
+'use strict';
 //課題①-1
 // for (var i = 3; i <= 100 ; i++) {
 //   if (i % 3 == 0 && i % 5 == 0) {
@@ -25,10 +26,12 @@ const result = prompt("「確認、追加、削除、終了」の4つのいず�
 const tasks = ['掃除', '買い物', '散歩',];
 
 for(let i = 0; i < 2; i++) {
-  tasks.forEach((task, index) => console.log(index, task, ));
-  
+  tasks.forEach((tasks, index ) => console.log(index, tasks ));
+
 }
 tasks.push = (result);
- 
-console.log(tasks);
+
+console.log(3, result);
+  
+
 
