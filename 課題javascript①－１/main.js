@@ -21,26 +21,16 @@
 // }
 
 //課題①-3
-console.log ('======================================')
+console.log ('===============================')
 console.log ('現在持っているタスクの一覧')
-console.log ('======================================')
+console.log ('===============================')
 
-const tasks = ['0: 散歩', '1: 掃除', '2: 買い物',] 
+const tasks = ['散歩', '掃除', '買い物',] 
 
-for(let i = 0; i < 1; i++) {
-  tasks.forEach(( tasks, ) => console.log( tasks ));
+  tasks.forEach(( index,tasks ) => console.log( tasks,index));
   
-}
+  const result = prompt('「確認、追加、削除、終了」の4つのいずれかを入力してください');
 
-const result = prompt('「確認、追加、削除、終了」の4つのいずれかを入力してください');
-
-console.log('3: ' + result);
-
+console.log(tasks);
 tasks.push = (result);
-
-
-
-
-
-
-
+console.log(result);
