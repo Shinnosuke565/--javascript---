@@ -19,36 +19,51 @@
 // } else {
 //   alert("不正解です！");
 // }
+//----------------------------------------------
 
 //課題①-3
+
+//定数を定義する
+const text1 = ('===============================');
+const text2 = ('現在持っているタスクの一覧');
+
+//関数を定義する
 function add() {
-  const text1 = ('===============================');
-  const text2 = ('現在持っているタスクの一覧');
-  const text3 = ('===============================');
   console.log(text1);
   console.log(text2);
-  console.log(text3);
+  console.log(text1);
 }
 
+//コンソールに出力
 add();
+
 //タスク一覧
-function index() {
-  let tasks = ['散歩', '掃除', '買い物',] 
+let tasks = [
+  '散歩',
+  '掃除',
+  '買い物'
+];
+
+//関数を定義する
+function showTitle() {
   tasks.forEach((index, tasks,) => console.log(tasks, index,));
 }
 
-index();
+//コンソールに出力
+showTitle();
 
 //追加入力するタスク一覧を表示する
-const result = prompt('「確認、追加、削除、終了」の4つのいずれかを入力してください');
-
-add();
+const result = prompt(
+  '「確認、追加、削除、終了」の4つのいずれかを入力してください');
 
 //タスクが追加されたら表示する
-window.alert = alert('「タスク」が追加されました');
+window.alert = alert(
+  '「タスク」が追加されました');
+  
 
-index()
+//コンソールに出力
+add();
 
-let tasks = ['散歩', '掃除', '買い物'] 
-
-console.log(result);
+//タスクに追加したタスク一覧をコンソールに出力
+tasks.push(result);
+showTitle();
