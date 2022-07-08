@@ -45,12 +45,12 @@ let tasks = [
 ];
 
 //関数を定義する
-function showTitle() {
+function showTaskList() {
   tasks.forEach((index, tasks,) => console.log(tasks, index,));
 }
 
 //コンソールに出力
-showTitle();
+showTaskList();
 
 //追加入力するタスク一覧を表示する
 const result = prompt(
@@ -60,10 +60,9 @@ const result = prompt(
 window.alert = alert(
   '「タスク」が追加されました');
   
-
 //コンソールに出力
 add();
 
 //タスクに追加したタスク一覧をコンソールに出力
 tasks.push(result);
-showTitle();
+showTaskList();
