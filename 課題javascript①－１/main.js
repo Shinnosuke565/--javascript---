@@ -58,7 +58,7 @@
 //タスクが追加されたら表示する
 // window.alert = alert(
 //   '「タスク」が追加されました');
-  
+
 //コンソールに出力
 // add();
 
@@ -71,7 +71,7 @@
 // //定数を定義する
 // const text1 = ('=====================================');
 // const text2 = ('現在持っているタスクの一覧');
- 
+
 // //関数を定義する
 // function add() {
 //   console.log(text1);
@@ -87,7 +87,7 @@
 //   '[内容]、机を片付ける[ジャンル]掃除',
 //   '[内容]、牛乳を買う[ジャンル]買い物',
 //   '[内容]、散歩する[ジャンル]運動'
-// ] 
+// ]
 
 // //関数を定義する
 // function showTaskList() {
@@ -136,38 +136,46 @@ const taskHeader = '現在持っているタスクの一覧';
 const addTaskMessage = '新しいタスクを追加しました。';
 
 //現在のタスク一覧
-let tasks = [  '[内容]、机を片付ける[ジャンル]掃除',  '[内容]、牛乳を買う[ジャンル]買い物',  '[内容]、散歩する[ジャンル]運動'] 
+let tasks = [
+  '[内容]、机を片付ける[ジャンル]掃除',
+  '[内容]、牛乳を買う[ジャンル]買い物',
+  '[内容]、散歩する[ジャンル]運動',
+];
 
 //関数を定義する
 function showTaskList() {
   console.log(divider);
   console.log(taskHeader);
   console.log(divider);
-  tasks.forEach((task,index) => console.log(index,task));
+  tasks.forEach((task, index) => console.log(index, task));
 }
 
 //現在のタスク一覧をコンソールに出力
 showTaskList();
 
 //操作選択
-const action = prompt('「確認、追加、削除、終了」の４つのいずれかを入力してください');
+const action = prompt(
+  '「確認、追加、削除、終了」の４つのいずれかを入力してください'
+);
 
-while(action !== '終了') {
-  if(action === '確認') {
+while (action !== '終了') {
+  if (action === '確認') {
     showTaskList();
-  } else if(action === '追加') {
+  } else if (action === '追加') {
     const task = prompt('タスクを入力してください');
     const jenre = prompt('ジャンルを入力してください');
     tasks.push(`[内容]、${task}[ジャンル]${jenre}`);
     alert(addTaskMessage);
-  } else if(action === '削除') {
+  } else if (action === '削除') {
     const index = prompt('削除するタスクの番号を入力してください');
-    tasks.splice(index,1);
+    tasks.splice(index, 1);
     alert('タスクを削除しました。');
   } else {
     alert('「確認、追加、削除、終了」の中から選択してください。');
   }
-  action = prompt('「確認、追加、削除、終了」の４つのいずれかを入力してください');
+  action = prompt(
+    '「確認、追加、削除、終了」の４つのいずれかを入力してください'
+  );
 }
 
 alert('タスク管理アプリを終了します。');
