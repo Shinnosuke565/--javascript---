@@ -59,4 +59,3 @@ tasks.
 tasks
 tasks.push(result);
 showTaskList();
-git add
