@@ -56,45 +56,6 @@ add();
 tasks.push(result);
 showTaskList();
 
-//定数を定義する
-// const text1 = ('===============================');
-// const text2 = ('現在持っているタスクの一覧');
-
-// //関数を定義する
-// function add() {
-//   console.log(text1);
-//   console.log(text2);
-//   console.log(text1);
-// }
-
-// //コンソールに出力
-// add();
-
-// //タスク一覧
-// const tasks = [
-//   '散歩',
-//   '掃除',
-//   '買い物'
-// ];
-
-// //関数を定義する
-// const showTaskList = () => {
-//   tasks.forEach((index, tasks,) => console.log(tasks, index,));
-// };
-
-// //現在のタスク一覧をコンソールに出力
-// showTaskList();
-
-// const result = prompt(
-//   '「確認、追加、削除、終了」の4つのいずれかを入力してください');
-
-//タスクに追加したタスク一覧をコンソールに出力
-// tasks.
-// tasks
-// tasks.push(result);
-// showTaskList();
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
 //課題③
 let tasks = [];
 
