@@ -22,41 +22,41 @@
 //----------------------------------------------
 
 //課題①-3
-const text1 = ('===============================');
-const text2 = ('現在持っているタスクの一覧');
+// const text1 = ('===============================');
+// const text2 = ('現在持っているタスクの一覧');
 
-function add() {
-  console.log(text1);
-  console.log(text2);
-  console.log(text1);
-}
+// function add() {
+//   console.log(text1);
+//   console.log(text2);
+//   console.log(text1);
+// }
 
-add();
+// add();
 
-tasks = [
-  '散歩',
-  '掃除',
-  '買い物'
-];
+// tasks = [
+//   '散歩',
+//   '掃除',
+//   '買い物'
+// ];
 
-function showTaskList() {
-  tasks.forEach((index, tasks,) => console.log(tasks, index,));
-}
+// function showTaskList() {
+//   tasks.forEach((index, tasks,) => console.log(tasks, index,));
+// }
 
-showTaskList();
+// showTaskList();
 
-const result = prompt(
-  '「確認、追加、削除、終了」の4つのいずれかを入力してください');
+// const result = prompt(
+//   '「確認、追加、削除、終了」の4つのいずれかを入力してください');
 
-window.alert = alert(
-  '「タスク」が追加されました');
+// window.alert = alert(
+//   '「タスク」が追加されました');
   
-add();
+// add();
 
-tasks.push(result);
-showTaskList();
+// tasks.push(result);
+// showTaskList();
 
-//課題③
+//課題③-1-2
 let tasks = [];
 
 document.getElementById('addButton').addEventListener('click', () => {
@@ -85,5 +85,19 @@ function displayTasks() {
     const stateButton = document.createElement('button');
     stateButton.innerText = task.state;
     stateCell.appendChild(stateButton);
+
+    const deleteCell = row.insertCell(-1);
+    const deleteButton = document.createElement('button');
+    deleteButton.innerText = '削除';
+    deleteCell.appendChild(deleteButton);
+
+    deleteButton.addEventListener('click', () => {
+      tasks.splice(index, 1);
+      tasks.forEach((task, index) => {
+        task.id = index;
+      });
+
+      displayTasks();
+    });
   });
 }
