@@ -1,5 +1,4 @@
-'use strict';
-let tasks = [];
+const tasks = [];
 
 document.getElementById('addButton').addEventListener('click', () => {
   const taskName = document.getElementById('addTask').value;
@@ -41,5 +40,6 @@ function displayTasks() {
 
       displayTasks();
     });
+    return deleteButton;
   });
 }
