@@ -27,6 +27,15 @@ function displayTasks() {
     stateButton.innerText = task.state;
     stateCell.appendChild(stateButton);
 
+    stateButton.addEventListener('click', () => {
+      if (task.state === '作業中') {
+        task.state = '完了';
+      } else if (task.state === '完了') {
+        task.state = '作業中';
+      }
+      displayTasks();
+    });
+
     const deleteCell = row.insertCell(-1);
     const deleteButton = document.createElement('button');
     deleteButton.innerText = '削除';
