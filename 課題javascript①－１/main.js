@@ -27,28 +27,30 @@ function displayTasks() {
     stateButton.innerText = task.state;
     stateCell.appendChild(stateButton);
 
-    stateButton.addEventListener('click', () => {
+    function toggleStatus(task) {
       if (task.state === '作業中') {
         task.state = '完了';
       } else if (task.state === '完了') {
         task.state = '作業中';
       }
       displayTasks();
-    });
+    }
 
-    const deleteCell = row.insertCell(-1);
-    const deleteButton = document.createElement('button');
-    deleteButton.innerText = '削除';
-    deleteCell.appendChild(deleteButton);
+    function createDeleteButton(index) {
+      const deleteButton = document.createElement('button');
+      deleteButton.innerText = '削除';
+      deleteButton.addEventListener('click', () => {
+        deleteTask(index);
+      });
+      return deleteButton;
+    }
 
-    deleteButton.addEventListener('click', () => {
-      tasks.splice(index, 1);
-      tasks.forEach((task, index) => {
+    function deleteTasks(index) {
+      task.splice(index, 1);
+      task, forEach((task, index) => {
         task.id = index;
       });
-
       displayTasks();
+    }
     });
-    return deleteButton;
-  });
-}
+  }
