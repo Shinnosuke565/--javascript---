@@ -27,32 +27,29 @@ function displayTasks() {
     stateButton.innerText = task.state;
     stateCell.appendChild(stateButton);
 
-    const toggleStatus = (task) => {
+    stateButton.addEventListener('click', () => {
       if (task.state === '作業中') {
         task.state = '完了';
       } else if (task.state === '完了') {
         task.state = '作業中';
       }
       displayTasks();
-    };
+    });
 
-    const createDeleteButton = (index) => {
-      const deleteButton = document.createElement('button');
-      deleteButton.innerText = '削除';
-      deleteButton.addEventListener('click', () => {
-        deleteTask(index);
-      });
-      return deleteButton;
-    };
+    const deleteCell = row.insertCell(-1);
+    const deleteButton = document.createElement('button');
+    deleteButton.innerText = '削除';
+    deleteCell.appendChild(deleteButton);
 
-    const deleteTasks = (index) => {
+    deleteButton.addEventListener('click', () => {
       tasks.splice(index, 1);
-      tasks.forEach((task, index) => {
+      tasks.forEach((tasks, index) => {
         task.id = index;
       });
-      displayTasks();
-    };
-    const displayTasks = () => {
-    };
-  });
-};
+  
+    deleteTask();
+    });
+    return deleteButton;
+    });
+}
+
