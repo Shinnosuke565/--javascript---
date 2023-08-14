@@ -13,7 +13,7 @@ document.getElementById('addButton').addEventListener('click', () => {
   displayTasks();
 });
 
-function displayTasks() {
+const displayTasks = () => {
   const tbody = document.querySelector('#todoTable tbody');
   tbody.innerHTML = '';
 
@@ -42,14 +42,23 @@ function displayTasks() {
     deleteCell.appendChild(deleteButton);
 
     deleteButton.addEventListener('click', () => {
-      tasks.splice(index, 1);
-      tasks.forEach((tasks, index) => {
+      tasks.splice(index,1);
+      tasks.forEach((tasks,index) => {
         task.id = index;
       });
   
-    deleteTask();
+      displayTasks();
     });
-    return deleteButton;
-    });
-}
+  });
+};
+
+const getSelectedState = () => {
+  if (showWorkingRadio.checked) {
+    return '作業中';
+  } else if (showWorkingRadio.checked) {
+    return '完了';
+  } else {
+    return 'all';
+  }
+};
 
