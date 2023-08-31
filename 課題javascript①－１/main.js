@@ -13,6 +13,19 @@ document.getElementById('addButton').addEventListener('click', () => {
   displayTasks();
 });
 
+const showWorkingRadio = document.getElementById('doing');
+const showCompletedRadio = document.getElementById('done');
+
+const getSelectedState = () => {
+  if (showWorkingRadio.checked) {
+    return '作業中';
+  } else if (showCompletedRadio.checked) {
+    return '完了';
+  } else {
+    return 'all';
+  }
+};
+
 const displayTasks = () => {
   const selectedState = getSelectedState();
 
@@ -21,7 +34,6 @@ const displayTasks = () => {
 
   tasks.forEach((task, index) => {
     if (selectedState === 'all' || task.state === selectedState) {
-    
       const row = tbody.insertRow(-1);
       row.insertCell(-1).innerText = index;
       row.insertCell(-1).innerText = task.name;
@@ -47,25 +59,17 @@ const displayTasks = () => {
 
       deleteButton.addEventListener('click', () => {
         tasks.splice(index, 1);
-        tasks.forEach((tasks, index) => {
-          task.id = index;
-        });
-
+        updateTaskIds();
         displayTasks();
       });
     }
   });
 };
 
-const showWorkingRadio = document.getElementById('doing');
-const showCompletedRadio = document.getElementById('done');
-
-const getSelectedState = () => {
-  if (showWorkingRadio.checked) {
-    return '作業中';
-  } else if (showCompletedRadio.checked) {
-    return '完了';
-  } else {
-    return 'all';
-  }
+const updateTaskIds = () => {
+  tasks.forEach((task, index) => {
+    task.id = index;
+  });
 };
+
+displayTasks();
