@@ -28,7 +28,7 @@ const getSelectedState = () => {
 
 const displayTasks = () => {
   const selectedState = getSelectedState();
-
+  console.log(selectedState); 
   const tbody = document.querySelector('#todoTable tbody');
   tbody.innerHTML = '';
 
@@ -42,13 +42,14 @@ const displayTasks = () => {
       const stateButton = document.createElement('button');
       stateButton.innerText = task.state;
       stateCell.appendChild(stateButton);
-    
+
       stateButton.addEventListener('click', () => {
         if (task.state === '作業中') {
           task.state = '完了';
         } else if (task.state === '完了') {
           task.state = '作業中';
         }
+        // タスクの状態が変更されたら再度表示
         displayTasks();
       });
 
@@ -59,7 +60,8 @@ const displayTasks = () => {
 
       deleteButton.addEventListener('click', () => {
         tasks.splice(index, 1);
-        updateTaskIds();
+        updateTaskIds(); // タスクを削除した後、IDを更新
+        // タスクが削除されたら再度表示
         displayTasks();
       });
     }
@@ -67,9 +69,18 @@ const displayTasks = () => {
 };
 
 const updateTaskIds = () => {
+  // タスクのIDを再計算
   tasks.forEach((task, index) => {
     task.id = index;
   });
 };
 
+// ラジオボタンのイベントリスナーを設定
+showWorkingRadio.addEventListener('change', displayTasks);
+showCompletedRadio.addEventListener('change', displayTasks);
+
+// 最初に表示を行う
 displayTasks();
+
+const showAllRadio = document.getElementById('all'); // 全てのラジオボタンを取得
+showAllRadio.addEventListener('change', displayTasks); // 全てのラジオボタンにイベントリスナーを追加
